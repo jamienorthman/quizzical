@@ -59,5 +59,11 @@ button:hover {
 }
 
 .start-btn {
+  width: 200px;
+  margin-top: 1em;
+}
 
+.questions {
+  display: flex;
+  flex-direction: column;
 }
