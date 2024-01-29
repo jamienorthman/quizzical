@@ -1,7 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: #F5F7FB;
-  background-image: url('./public/blob 4.png'), url('./public/blob 5.png');
+  background-image: url('/blob 4.png'), url('/blob 5.png');
   background-position: bottom left, top right;
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed, scroll;
@@ -63,7 +63,52 @@ button:hover {
   margin-top: 1em;
 }
 
-.questions {
+.main {
+  max-width: 100%;
+}
+
+.main > button {
+  align-self: center;
+  margin-top: 1.5em;
+}
+
+.main, .questions, 
+.question-container {
   display: flex;
   flex-direction: column;
+}
+
+.options, .score-container {
+  display: flex;
+}
+
+.options {
+  gap: 2em;
+}
+
+.options > button {
+  color: #293264;
+  padding: 0.8em 2em;
+  background-color: transparent;
+  font-size: 0.7rem;
+  text-align: center;
+  border: none;
+  border: 1px solid #293264;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.options > button:hover,
+.options > button:active {
+  background-color: #D6DBF5;
+}
+
+.question-container,
+.divider {
+  max-width: 90%;
+}
+
+.divider {
+  border-bottom: 1px solid #DBDEF0;
+  margin-top: 1.3em;
 }
