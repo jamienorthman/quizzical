@@ -1,6 +1,19 @@
-function Option(props) {
+function Option({option, text, handleChange}) {
+    
+    const {id, selected} = option
+
     return (
-        <button className="option">{props.text}</button>
+        <div>
+            <input 
+                type="radio"
+                name="option"
+                id={id}
+                checked={selected}
+                onChange={handleChange}
+                className="option">
+            </input>
+            <label htmlFor={id}>{text}</label>
+        </div>
     )
 }
 

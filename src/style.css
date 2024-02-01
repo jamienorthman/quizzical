@@ -1,3 +1,12 @@
+*, *::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #F5F7FB;
@@ -10,12 +19,10 @@ body {
 
 #root {
   max-width: 1280px;
-  margin: auto;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 h1, h2, h3 {
@@ -78,12 +85,18 @@ button:hover {
   flex-direction: column;
 }
 
+.questions {
+  max-width: 100%;
+  margin: auto;
+}
+
 .options, .score-container {
   display: flex;
 }
 
 .options {
   gap: 2em;
+  flex-wrap: wrap;
 }
 
 .options > button {

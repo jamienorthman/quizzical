@@ -8,6 +8,22 @@ function QuestionsPage() {
 
     const [allQuestions, setAllQuestions] = useState([])
     const [loading, setLoading] = useState(true)
+    const [options, setOptions] = useState([
+      {name: 'option1', selected: false},
+      {name: 'option2', selected: false},
+      {name: 'option3', selected: false},
+      {name: 'option4', selected: false}
+    ])
+
+    const handleChange = (e) => {
+      setOptions(prev => {
+          return prev.map(item => { 
+              if (item.name == e.target.value) {
+                  return {...item, selected: true}
+              } else return {...item, selected: false}
+          })
+      })
+    }
 
     useEffect(() => {
         fetch('https://opentdb.com/api.php?amount=5&difficulty=easy')
@@ -21,7 +37,14 @@ function QuestionsPage() {
               const combinedOptions = optionsArr.toSpliced(randomIndex, 0, question.correct_answer)
               question.individualOptions = combinedOptions.map(option => {
                 return (
-                  <Option key={uuidv4()} text={decode(option)} />
+                  <Option 
+                    key={uuidv4()}
+                    option={option} 
+                    text={decode(option)}
+                    id={option.name}
+                    checked={option.selected}
+                    handleChange={handleChange}
+                  />
                 )
               })
               question.id = uuidv4()
@@ -33,7 +56,7 @@ function QuestionsPage() {
             console.error('Error fetching data:', error)
             setLoading(false)
           })
-      }, [])
+    }, [])
 
       if (loading) {
         return <h3>Loading...</h3>
@@ -52,6 +75,8 @@ function QuestionsPage() {
         />
       )
     })
+
+    console.log(options)
 
     return (
         <div className="main">

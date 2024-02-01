@@ -12,12 +12,12 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       {!showQuiz ?
       <StartQuiz handleClick={startQuiz}/> :
       <QuestionsPage />
       }
-    </div>
+    </>
   )
 }
 
