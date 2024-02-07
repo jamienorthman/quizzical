@@ -3,9 +3,11 @@ function QuestionObject(props) {
         <>
             <div className="question-container">
                 <h2>{props.question}</h2>
-                <div className="options">
+                
+                <form className="options">
                     {props.options}
-                </div>
+                </form>
+                
             </div>
             <div className="divider"></div>
         </>

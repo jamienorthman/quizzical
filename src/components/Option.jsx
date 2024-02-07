@@ -4,15 +4,15 @@ function Option({option, text, handleChange}) {
 
     return (
         <div>
-            <input 
-                type="radio"
-                name="option"
-                id={id}
-                checked={selected}
-                onChange={handleChange}
-                className="option">
-            </input>
-            <label htmlFor={id}>{text}</label>
+                <input 
+                    type="radio"
+                    name="option"
+                    id={id}
+                    checked={selected}
+                    onChange={handleChange}
+                    className="option">
+                </input>
+                <label htmlFor={id}>{text}</label>
         </div>
     )
 }

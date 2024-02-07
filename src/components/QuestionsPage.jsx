@@ -47,6 +47,7 @@ function QuestionsPage() {
                   />
                 )
               })
+              setOptions([...options, question.individualOptions])
               question.id = uuidv4()
               return question
             })
