@@ -5,7 +5,7 @@ function QuestionObject(props) {
                 <h2>{props.question}</h2>
                 
                 <form className="options">
-                    {props.options}
+                    {props.children}
                 </form>
                 
             </div>
