@@ -45,10 +45,15 @@ function QuizPage({ questions }) {
       if (isChecked(optionIndex, option) && 
           option !== quizData[optionIndex].correctAnswer
       ) {
-        return {backgroundColor: showScore && "rgb(235, 158, 158)"}
+        return {backgroundColor: "rgb(235, 158, 158)"}
+      }
+      if (isChecked(optionIndex, option) && 
+          option === quizData[optionIndex].correctAnswer
+      ) {
+        return {backgroundColor: "rgb(99, 210, 99)"}
       }
       if (option === quizData[optionIndex].correctAnswer) {
-        return {backgrouncColor: showScore && "rgb(99, 210, 99)"}
+        return {backgrouncColor: "rgb(99, 210, 99)"}
       }
     }
 
@@ -89,7 +94,7 @@ function QuizPage({ questions }) {
               />
               <label 
                 htmlFor={decode(option)}
-                style={displayStyledAnswers(optionIndex, option)}
+                style={showScore ? displayStyledAnswers(optionIndex, option): null}
               >
                   {decode(option)}
               </label>
