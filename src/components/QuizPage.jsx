@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import QuestionObject from './QuestionObject'
 import { decode } from 'html-entities'
 import { v4 as uuidv4 } from 'uuid'
-import classnames from 'classnames'
 
 function QuizPage({ questions }) {
     const [quizData, setQuizData] = useState([])
