@@ -52,7 +52,7 @@ function QuizPage({ questions }) {
         return {backgroundColor: "rgb(99, 210, 99)"}
       }
       if (option === quizData[optionIndex].correctAnswer) {
-        return {backgrouncColor: "rgb(99, 210, 99)"}
+        return {backgroundColor: "rgb(99, 210, 99)"}
       }
     }
 
