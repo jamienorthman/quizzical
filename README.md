@@ -27,4 +27,4 @@ The other page is also the QuizPage component and handles the logic of the quiz.
 - uuidv4
 
 ### TODOs
-Currently only displays satus of selected answers. When an answer is incorrect, display the correct answer for that question as well. "Play again" button should reload quiz page, not go back to home but call to API happens on home page.
+"Play again" button should reload quiz page, not go back to home but call to API happens on home page.
