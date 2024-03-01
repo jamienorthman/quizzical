@@ -7,6 +7,7 @@ function QuizPage({ questions }) {
     const [quizData, setQuizData] = useState([])
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
+    const [inputsChecked, setInputsChecked] = useState(0)
 
     useEffect(() => {
       const updateQuiz = () => {
@@ -25,6 +26,7 @@ function QuizPage({ questions }) {
     }, [])
 
     function handleChange(e, optionIndex) {
+      let amountChecked = 0
       const { value } = e.target
       const updatedData = [...quizData]
       updatedData[optionIndex] = {
@@ -32,6 +34,8 @@ function QuizPage({ questions }) {
         selected: true,
         selectedAnswer: value
       }
+      amountChecked += 1
+      setInputsChecked(prevInputs => prevInputs + amountChecked)
       setQuizData(updatedData)
     }
 
@@ -74,6 +78,12 @@ function QuizPage({ questions }) {
       location.reload()
     }
 
+    const disabledStyles = {
+      backgroundColor: 'gray',
+      cursor: 'not-allowed',
+      color: 'white'
+    }
+
     const questionList = quizData.map((object, optionIndex) => {
       return (
         <QuestionObject
@@ -90,6 +100,7 @@ function QuizPage({ questions }) {
                 id={decode(option)}
                 checked={isChecked(optionIndex, option)}
                 onChange={(e) => handleChange(e, optionIndex)}
+                required
               />
               <label 
                 htmlFor={decode(option)}
@@ -113,6 +124,8 @@ function QuizPage({ questions }) {
           <div className="score-replay">
             <button 
               onClick={displayTotalScore}
+              style={inputsChecked < 5 ? disabledStyles : null}
+              disabled={inputsChecked < 5}
               className="check-answers-btn">
                 Check answers
             </button> 
