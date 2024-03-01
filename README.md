@@ -23,8 +23,8 @@ A small quiz app made in React. Quiz questions are retrieved from the Open Trivi
 - Vite
 
 ### Dependencies
-[html entities](https://www.npmjs.com/package/html-entities)
-[uuidv4](https://www.npmjs.com/package/uuidv4)
+- [html-entities](https://www.npmjs.com/package/html-entities)
+- [uuidv4](https://www.npmjs.com/package/uuidv4)
 
 ### TODOs
 "Play again" button should reload quiz page, not go back to home but call to API happens on home page.
