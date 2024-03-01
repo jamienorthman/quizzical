@@ -20,9 +20,6 @@ body {
 #root {
   max-width: 1280px;
   padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: auto;
 }
 
@@ -53,6 +50,7 @@ button:hover {
 
 .start-quiz {
   text-align: center;
+  margin: 15em auto;
 }
 
 .title {
@@ -133,14 +131,6 @@ button:hover {
   border: 2px dashed #293264;
 }
 
-/*.correct {
-  background-color: rgb(99, 210, 99);
-}
-
-.incorrect {
-  background-color: rgb(235, 158, 158);
-}*/
-
 .question-container,
 .divider {
   max-width: 90%;
@@ -160,4 +150,15 @@ button:hover {
 
 .check-answers-btn {
   margin-top: 1em;
+}
+
+@media (max-width: 460px) {
+  .options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .check-answers-btn {
+    margin-bottom: 1em;
+  }
 }
